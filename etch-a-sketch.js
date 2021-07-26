@@ -9,6 +9,8 @@ makeGrid(16, 16);
 function makeGrid(r, c) { // r = rows, c = columns
     makeRows(r);
     makeColumns(c);
+    container.style.setProperty('--grid-rows', r);
+    container.style.setProperty('--grid-cols', c);
 
     //Add an Event listener for each cell div element (256). 
     //The event fires draw function to style the bg color
@@ -20,12 +22,8 @@ function makeGrid(r, c) { // r = rows, c = columns
 function makeRows(rowNum) {
     for (let i = 0; i < rowNum; i++) {
         let row = document.createElement('div');
-        container.appendChild(row).className = 'gridRow';
-        //let row = [];
-        // row[i] = document.createElement('div');
-        // container.appendChild(row[i]).className = 'gridRow';     
+        container.appendChild(row).className = 'gridRow';   
     }
-    
 }
     
 function makeColumns(cellNum) {

@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
 /* div {
     width: 100px;
     background-color: brown;
@@ -9,26 +14,21 @@
 
 .container {
     margin-top: 10%;
-    /* min-width: 960px;
-    max-width: 960px; */
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: center;
+    max-height: 34rem;
+    display: grid;  
+    grid-gap: 0.1em;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
     background-color: seagreen;
-    align-items: center;
 }
 
 .gridRow {
-
-    flex-basis: auto;
-    background-color: burlywood;
+    border: 1px solid blue;
+    background-color:blueviolet;
 }
 
 .cell { 
-    min-width: 10px;
-    min-height: 10px;
-    padding: 0;
+    border: 1rem solid rgb(229, 255, 0);
     background-color: rosybrown;
   }
 
