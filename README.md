@@ -13,4 +13,4 @@ And more importantly, nail the CSS to:
 
 But so far is more than a passable solution to the lesson's challenge.
 
-Live Demo : https://this-is-alan.github.io/etch-a-sketch/
+Live Demo : 
