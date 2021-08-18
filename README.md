@@ -7,9 +7,10 @@ Link of the lesson in question:  https://www.theodinproject.com/paths/foundation
 
 There are still one suggested feature to add: darken the color of the "brush" with each passing of the mouse. 
 And more importantly, nail the CSS to:
--center the grid
--implement CSS grid or Flexbox to make it a truly flexible project
--and maintain the grid's size constant independently of the cells number.
+
+- center the grid
+- implement CSS grid or Flexbox to make it a truly flexible project
+- and maintain the grid's size constant independently of the cells number.
 
 But so far is more than a passable solution to the lesson's challenge.
 
