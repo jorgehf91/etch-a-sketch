@@ -19,7 +19,7 @@ function makeGrid(r, c) { // r = rows, c = columns
     //The event callbacks draw function to style the bg color
     for (let j = 0; j < cells.length; j++) {
         cells[j].addEventListener('mouseover', draw);
-        cells[j].textContent = `${numCell + j}`;
+        // cells[j].textContent = `${numCell + j}`;
     }
 }
 
@@ -49,12 +49,23 @@ document.addEventListener('keypress', (e) => {
     else if (e.code === 'KeyB'){ //The brush default color
       color = 'red';
     }
+    else if (e.code === 'KeyR') {
+        color = randomColors();
+    }
 });
 
 function draw(e) { //drawing function to callback to eventlistener to each cell --inside makeGrid()--
     e.target.style.backgroundColor = color;
 }
 
+function randomColors() {
+    let r = Math.floor(Math.random() * 257);
+    let g = Math.floor(Math.random() * 257);
+    let b = Math.floor(Math.random() * 257);
+
+    let randColor = `rgb(${r}, ${g}, ${b})`;
+    return randColor;
+}
 
 //Make a new grid button
 let newGrid = document.createElement('button');
