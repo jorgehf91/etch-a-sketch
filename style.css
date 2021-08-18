@@ -15,9 +15,8 @@
     min-height: 80vh;
     max-width: 30vw;
     display: flex;
-    flex-direction: row; 
-    justify-content: stretch;
-    align-items: stretch;
+    flex-flow: row wrap;
+    align-content: flex-start;
     border: 1px dashed red;
 }
 
@@ -27,10 +26,10 @@
     
 }
 
-.cell { 
-    min-height: 0;
-    min-width: 0;
+.cell {
+    height: 20px;
     flex-grow: 3;
+    flex-basis: 1 1 20px;
     background-color: rosybrown;
     border: 1px solid rgb(243, 12, 174);
   }
