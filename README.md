@@ -12,6 +12,6 @@ And more importantly, nail the CSS to:
 - implement CSS grid or Flexbox to make it a truly flexible project
 - and maintain the grid's size constant independently of the cells number.
 
-But so far is more than a passable solution to the lesson's challenge.
+But so far is more than a passable solution for the lesson's challenge.
 
 Live Demo : https://jorgehf91.github.io/etch-a-sketch/
