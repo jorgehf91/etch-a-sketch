@@ -10,16 +10,11 @@ makeGrid(16, 16);
 function makeGrid(r, c) { // r = rows, c = columns
     makeRows(r);
     makeColumns(c);
-    // container.style.setProperty('--grid-rows', r);
-    // container.style.setProperty('--grid-cols', c);
-
-    let numCell = 0; //Restart text number
 
     //Add an Event listener for each cell div element (256). 
     //The event callbacks draw function to style the bg color
     for (let j = 0; j < cells.length; j++) {
         cells[j].addEventListener('mouseover', draw);
-        // cells[j].textContent = `${numCell + j}`;
     }
 }
 
@@ -44,13 +39,22 @@ function makeColumns(cellNum) {
 document.addEventListener('keypress', (e) => {
     console.log(e.code);
     if( e.code === 'KeyE') { //The eraser "color"
-      color = 'rosybrown';
+        for (let i = 0; i < cells.length; i++) { //the eventlistener from the R keypress event was still active, this solves it.
+         cells[i].removeEventListener('mouseover', randomColors);
+        }
+        color = 'rosybrown';
     }
     else if (e.code === 'KeyB'){ //The brush default color
+        for (let i = 0; i < cells.length; i++) { //the eventlistener from the R keypress event was still active, this solves it.
+        cells[i].removeEventListener('mouseover', randomColors);
+      }
       color = 'red';
     }
     else if (e.code === 'KeyR') {
-        color = randomColors();
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].addEventListener('mouseover', randomColors);
+        }
+        //color = randomColors();
     }
 });
 
@@ -58,13 +62,12 @@ function draw(e) { //drawing function to callback to eventlistener to each cell 
     e.target.style.backgroundColor = color;
 }
 
-function randomColors() {
-    let r = Math.floor(Math.random() * 257);
-    let g = Math.floor(Math.random() * 257);
-    let b = Math.floor(Math.random() * 257);
+function randomColors(e) {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
 
-    let randColor = `rgb(${r}, ${g}, ${b})`;
-    return randColor;
+    return color = `rgb(${r}, ${g}, ${b})`;
 }
 
 //Make a new grid button
